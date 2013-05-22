@@ -1,0 +1,14 @@
+markdown: kramdown
+pygments: true
+permalink: /posts/:title/:categories
+auto: true
+url: https://github.com/adamvi/Markdown_Tests2
+title : Jekyll Report Tests
+description: "Exactly what it sounds like."
+disqus_shortname: markdowntests2
+analytics: UA-32899481-1
+gauges: 50f2b533613f5d7c8000000c
+author :
+  name : SchoolView
+  github : SchoolView
+  email: avaniwaarden@gmail.com
