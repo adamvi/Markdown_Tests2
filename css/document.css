@@ -100,8 +100,8 @@ table {
 caption,
 th,
 td {
-  text-align: left;
   font-weight: normal;
+  padding: 6px;
 }
 blockquote:before,
 blockquote:after,

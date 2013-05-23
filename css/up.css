@@ -869,9 +869,7 @@ table{
 	max-width:100%;
 	background-color:transparent
 }
-th{
-	text-align:left
-}
+
 .table{
 	width:100%;
 	margin-bottom:21px
@@ -880,7 +878,6 @@ th{
 .table tbody>tr>th,
 .table thead>tr>td,
 .table tbody>tr>td{
-	padding:8px;
 	line-height:1.428571429;
 	vertical-align:top;
 	border-top:1px solid #ddd
