@@ -19,3 +19,4 @@ title: "Reports"
 
 [SIMEX and SGPs](SIMEX-report-June-2013.html)
 
+[SIMEX and SGPs (Print)](SIMEX-report-June-2013-report_only.html)
