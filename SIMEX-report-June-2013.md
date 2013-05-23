@@ -63,7 +63,7 @@ There is, however, something strange here. In earlier studies of the SIMEX metho
 
 ### *Why Doesn’t the SIMEX Method Perform Well in Correcting Individual SGP?*
 At the end of the measurement error report presented at the TAC Meeting in July, 2012, we raised the question about the validity of using the SIMEX method to correct individual level SGPs. The rationale is as follows. 
-Suppose we estimated this model $\hat{y}_ {GOOD}=a+bx_ {OBSERVED}$ where $x_ {OBSERVED} $ is measured with errors, but what we really want to estimate is $\hat{y}_ {BETTER}=\alpha+\beta x_ {TRUE}$. Now the SIMEX method, or any other measurement error correction, moves us from a and b closer to α and β, and often times the goal is achieved at this stage. But in the SGP analysis, simply obtaining α and β is not enough. To get more accurate SGPs, we need to obtain $\hat{y}_ {BETTER}$, which is not obtainable unless we have $x_ {TRUE}$. 
+Suppose we estimated this model $\hat{y}_ {GOOD}=a+bx_ {OBSERVED}$ where $x_ {OBSERVED}$ is measured with errors, but what we really want to estimate is $\hat{y}_ {BETTER}=\alpha+\beta x_ {TRUE}$. Now the SIMEX method, or any other measurement error correction, moves us from a and b closer to $\alpha$ and $\beta$, and often times the goal is achieved at this stage. But in the SGP analysis, simply obtaining $\alpha$ and $\beta$ is not enough. To get more accurate SGPs, we need to obtain $\hat{y}_ {BETTER}$, which is not obtainable unless we have $x_ {TRUE}$. 
 So, when estimating individual SGPs with SIMEX, what we estimated is roughly $\alpha+\beta x_ {TRUE}$, which is neither $\hat{y}_ {GOOD}$ nor $\hat{y}_ {BETTER}$. We were able to achieve some bias reduction, because the observed scores are usually not far from the true scores, but the effect is much discounted.
 To test this theory, we plugged the "true" scores into the SIMEX process. Table 2 presents the outcomes of SGP without SIMEX and with SIMEX combined with "true" scores from 100 simulation replications.
 
@@ -81,7 +81,7 @@ In Table 2, the SIMEX method greatly reduces both bias and MSE when used in comb
 
 ### *Can We Use Estimated True Scores?*
 Results in Table 2 are obviously not obtainable in reality. As per some TAC members’ suggestion, we tried plugging in the estimated true scores:
-$ X_ {\text{Est. True}}= \text{Reliability} \times (X_ {OBSERVED}-\bar{X}_ {OBSERVED})+\bar{X}_ {OBSERVED}$
+$X_ {\text{Est. True}}= \text{Reliability} \times (X_ {OBSERVED}-\bar{X}_ {OBSERVED})+\bar{X}_ {OBSERVED}$
 The results we obtained are almost exactly the same as those in Table 1, which suggests that the inaccessibility of the true scores is a problem that is insurmountable.
 
 ### *Conclusion*
