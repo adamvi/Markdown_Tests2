@@ -1,5 +1,6 @@
 _site/*
 _site/css/document.css
+MISC/*
 .DS_Store
 .Rproj.user
 *.Rproj
