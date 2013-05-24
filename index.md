@@ -14,14 +14,13 @@ Statistical graphics are powerful -- your eyes will jump to the graph below imme
 
 Vistat aims to provide _working_ recipes for statistical graphics by building them from source. The website is based on Github/Jekyll, and graphs are generated dynamically through the R package [**knitr**](http://yihui.name/knitr), hence reproducibility is guaranteed, and readers can see the source code at the same time.
 
-#  Annual Reports
+##  Annual Reports
 
 [Reports](report_landing.html)
 
-# Latest 10 posts
+## Latest 10 posts
 
 <section class="content">
-  <h2 class="thin">POSTS</h2>
   <ul class="listing">
   {% for post in site.posts limit:10 %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -32,7 +31,7 @@ Vistat aims to provide _working_ recipes for statistical graphics by building th
 
 ## How to contribute
 
-You can [fork the repository](https://github.com/adamvi/Markdown_Tests2) on Githuband submit a pull request to us. For more details, see [about](about.html).
+You can [fork the repository](https://github.com/adamvi/Markdown_Tests2) on Github and submit a pull request to us. For more details, see [about](about.html).
 
 ## Copyright
 
