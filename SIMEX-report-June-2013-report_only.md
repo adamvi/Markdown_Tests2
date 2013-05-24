@@ -4,7 +4,7 @@ report_title: The Application of the SIMEX Method to the SGP Analysis
 report_abstract: Here is some text about the article - something like an abstract.  Prediction errors can be decomposed into two main subcomponents ...
 report_date: June 2013
 pdf.name: SIMEX-report-June-2013.pdf
-meta_title: The Application of the SIMEX Method to the SGP Analysis:
+meta_title: 'The Application of the SIMEX Method to the SGP Analysis:'
 meta_subtitle: Report and Recommendations
 contents:
   - section: SIMEX Method and Individual SGPs
