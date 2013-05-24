@@ -4,7 +4,7 @@ report_title: The Application of the SIMEX Method to the SGP Analysis
 report_abstract: Here is some text about the article - something like an abstract.  Prediction errors can be decomposed into two main subcomponents ...
 report_date: June 2013
 pdf.name: SIMEX-report-June-2013.pdf
-meta_title: Simex Simulations
+meta_title: The Application of the SIMEX Method to the SGP Analysis:
 meta_subtitle: Report and Recommendations
 contents:
   - section: SIMEX Method and Individual SGPs
@@ -285,7 +285,7 @@ We set up the simulation study similarly as that described in 1.1, except that t
 		<td align='right' style=';'> 5.20</td>
 	</tr>
 	<tr>
-		<td align='right' style=';'>With SIMEX </td>   4.519    |     0.094    |   2.125    |   25.679    |    0.084    |    5.060 
+		<td align='right' style=';'>With SIMEX </td>
 		<td align='right' style=';'>4.52</td>
 		<td align='right' style=';'> 0.09</td>
 		<td align='right' style=';'> 2.13</td>

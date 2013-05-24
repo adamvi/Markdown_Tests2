@@ -285,7 +285,7 @@ We set up the simulation study similarly as that described in 1.1, except that t
 		<td align='right' style=';'> 5.20</td>
 	</tr>
 	<tr>
-		<td align='right' style=';'>With SIMEX </td>   4.519    |     0.094    |   2.125    |   25.679    |    0.084    |    5.060 
+		<td align='right' style=';'>With SIMEX </td> 
 		<td align='right' style=';'>4.52</td>
 		<td align='right' style=';'> 0.09</td>
 		<td align='right' style=';'> 2.13</td>
@@ -298,4 +298,6 @@ We set up the simulation study similarly as that described in 1.1, except that t
 </table>
 </div>
 
+Table 3 shows that the SIMEX method is able to reduce mean square error at the aggregated level, especially for mean SGPs. 
 
+###  Aggregate, then SIMEX
