@@ -1,143 +1,258 @@
 ---
 layout: report
-report_title: The Application of the SIMEX Method to the SGP Analysis
-report_abstract: Here is some text about the article - something like an abstract.  Prediction errors can be decomposed into two main subcomponents ...
-report_date: June 2013
-meta_title: Simex Simulations
-meta_subtitle: Report and Recommendations
+report_title: The 2011 Lorem Ipsum Report
+report_abstract: Here is some text about the article - something like an abstract ...
+report_date: June 2012
+meta_title: Annual Report
+meta_subtitle: 2011
 contents:
-  - section: SIMEX Method and Individual SGPs
-    subsections: [Simulation Study Setup, SIMEX Performance, Results]
-  - section: SIMEX Method and Aggregate SGPs
-    subsections: [Randomly Assigned Students, Actual Student Assignment, SIMEX Corrected Aggregate SGPs]
+  - section: Introduction
+    subsections: [Cras lorem est mattis ac justo]
+  - section: Methods
+    subsections: [Mathematical Equations, Curabitur ac Volutpat Nunc]
+  - section: Results
+  - section: More Tables and Figures
+    subsections: [Images from the Web, More HTML Tables, Tables in LaTeX]
+  - section: References
 ---
 
-# The Effect of the SIMEX Method on Individual SGPs <a id="SIMEX Method and Individual SGPs"></a>
+# Introduction <a id="Introduction"></a>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis lectus et tellus pharetra sodales. Duis eget sapien quis urna sagittis facilisis. Ut aliquam dui ut est euismod a mattis magna semper. Curabitur nec magna turpis. Etiam suscipit lectus vel lacus dignissim sollicitudin non at nisi. Proin ut nibh non magna vulputate laoreet in eget felis. Vivamus eget turpis nulla. Aliquam erat volutpat. Suspendisse potenti. Nullam viverra diam sit amet risus fermentum iaculis. Integer vitae purus eu urna ultrices sodales vel sed nisl.
 
-## The Set-up of the Simulation Study<a id="SIMEX Method and Individual SGPs + Simulation Study Setup"></a>
-We tested the performance of the SIMEX method with the SGP model in the following steps. We took scale scores of a cohort of students who were in grades 3-5 in years 2010-11 through 2012-13, and another cohort of students who were in grades 3-4 in years 2011-12 to 2012-13 in sgpData of the SGP package. We pretended that these are the true scores of the given grades and years. This dataset includes 6,468 students in the first cohort, and 6,977 students in the second cohort (missing values were excluded). We generated normally distributed measurement errors with the conditional standard errors of measurement of the various grades provided in SGPstateData in the same package. The "observed" scores are the sum of the "true" scores and the generated measurement errors. We ran the SGP analysis on the "true" scores and the SGP with SIMEX analysis on the "observed" scores respectively to produce "true" SGPs, "observed" SGPs, and SIMEX SGPs. To minimize sampling errors, 100 "observed" data sets were generated using the above method. As results, each student has a true SGP, 100 observed SGPs from the 100 generated data sets, and 100 SIMEX SGPs from the same data sets. 
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+2. Phasellus quis sem a tortor tempus faucibus.
+3. Nam eget velit at odio imperdiet congue ut sed nisl.
+ 
 
-## Quantifying the Performance of the SIMEX Method <a id="SIMEX Method and Individual SGPs + SIMEX Performance"></a>
+## Cras lorem est mattis ac justo <a id="Introduction + Cras lorem est mattis ac justo"></a>
+Cras lorem est, ultrices sed vulputate in, mattis ac justo. Donec vulputate risus id augue condimentum tempus. Vivamus tempus luctus metus, eu egestas massa bibendum quis. Donec fermentum nulla sit amet mauris ullamcorper at accumsan urna dapibus. Vestibulum vel elit at tortor sodales condimentum euismod in ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec auctor fringilla leo pharetra ullamcorper. Integer venenatis ipsum vitae nisl feugiat imperdiet. Vivamus ante libero, scelerisque ut vestibulum vitae, sagittis ut lorem.
 
-Bias and Mean Square Error (MSE) are the usual ways of quantifying the performance of statistical methods. In a simulation study where the major outcome is the estimation of a few model parameters, both are usually straight forward to calculate—bias is the difference between the estimated and the true parameter averaged over simulation replications, and MSE is the squared difference between the estimated and the true parameter averaged over simulation replications. 
+* Mauris in ligula ipsum, at vehicula turpis.
+* Duis at erat non enim fringilla posuere sed non dolor.
 
-In the simulation study of the SGP analysis, however, each replication of the analysis produces results for at least thousands of students. To evaluate the estimators, we need to summarize both across students and across replications. 
+# Methods <a id = "Methods"></a>
 
-We derive the following statistics to compare SGPs estimated with and without SIMEX.
+## Mathematical Equations are Supported  <a id="Methods + Mathematical Equations"></a>
+When "kramdown" flavor of Markdown is specified in the _config.yml file, it is possible to produce beatiful mathematics equations, either inline or as a seperate "display" line.  Equations are writen in LaTeX form.  For example, to include an inline LaTeX equation you enclose the equation in $ delimiters, for example: `$\frac{1}{n} \sum_{i=1}^{n} x_{i}$` produces $\frac{1}{n} \sum _{i=1}^{n} x _{i}$ inline.  This, of course, is the equation for the Arithmetic mean.  Other, more complex equations may need their own line, or "display".  Equations that are displayed are also numbered according to order of presentation.  For example:
 
-$$ \textit{Total MSE} = \frac{1}{n} \sum_{i=1}^n \frac{1}{R} \sum_{r=1}^R (\widehat{SGP}_{i,r} - SGP_i)^2$$
+$$ MSE = \frac{1}{n} \sum_ {i=1}^n (\widehat{\theta}_ {i} - \theta_i)^2$$
 
-Where $i=1, 2,\text{ ... },n$ indicates students, $r=1, 2,\text{ ... },R$ indicates simulation replications, $\widehat{SGP}_{i,r}$ denotes the estimated SGP (either with or without SIMEX) for student $\textit{i}$ in replication $\textit{r}$, and $SGP_i$ denotes the "true" SGP for student $\textit{i}$.
+$$ MSE(\hat{\theta}) = \mathbb{E}[(\hat{\theta} - \theta)^2]$$
 
-$$ \textit{Mean Bias} = \frac{1}{n} \sum_{i=1}^n \frac{1}{R} \sum_{r=1}^R (\widehat{SGP}_{i,r} - SGP_i)$$
-
-$$ \textit{SD Bias = Standard Deviation}_{\textit{ across }i} (\frac{1}{R} \sum_{r=1}^R \widehat{SGP}_{i,r} - SGP_i)$$
-
-*Total MSE* is a comprehensive standard which accounts for both bias and variability. *Mean Bias* is the bias averaged over students and replications, but since *Mean Bias* of either estimator is likely to be very close to 0, we also calculated *SD Bias*, which is derived by taking the difference between the estimated and the true SGPs averaged across replications, and then calculate the standard deviation of these differences across students. *SD Bias* may be a better indicator of the magnitude of bias than *Mean Bias*, just like Standard Error of Measurement is a better indicator of the magnitude of measurement errors than the mean, which is usually 0.
-
-## Results <a id="SIMEX Method and Individual SGPs + Results"></a>
-The following table presents the results of the simulation study.
+## Curabitur ac Volutpat Nunc <a id="Methods + Curabitur ac Volutpat Nunc"></a>
+In hac habitasse platea dictumst. Donec et purus at lacus rutrum aliquet. Nullam dictum lectus vitae mi ultrices viverra sed sit amet odio. Mauris egestas tincidunt odio in blandit. Integer odio neque, eleifend vitae accumsan pellentesque, sagittis id felis. Etiam at sem quam, nec malesuada mauris. Nulla ut diam a leo dignissim volutpat non quis nunc. Suspendisse potenti.
 
 |----------------------+-------------+-------------+-------------+-------------+---------------+-------------|
-|**Table 1.**          |             |             |             |             |              |              |
-|                      |             | SGP Without SIMEX |       |             |              |SGP With SIMEX|
+|***Table 1.***         |             |             |             |             |               |             |
+|                      |             | **Aliquam Leo Lorem** |       |        |        | **Varius Nec Nibh** |
 |:---------------------|------------:|------------:|------------:|------------:|--------------:|------------:|
 |                      |...............|............................|...............|      |       |         |
-|                      | Total MSE   |  Mean Bias  |   SD Bias   |  Total MSE  |   Mean Bias   |   SD Bias   |
-| Grade 4 ~ Grade 3    |   362.980   |    0.019    |    8.004    |   393.244   |     -0.107    |    6.612    |
-| Grade 5 ~ Grade 4, 3 |   360.795   |   -0.001    |    7.512    |   379.277   |      0.088    |    6.602    |
+|                      |  Nec Nibh   |  Ultricies  | Cras Purus  |   Nec Nibh  | Ultricies   |  Cras Purus   |
+| Pellentesque         |   362.980   |    0.019    |    False    |   393.244   |   -0.107    |       True    |
+| Pellentesque Nec     |   360.795   |   -0.001    |    True     |   379.277   |    0.088    |      False    |
 |----------------------+-------------+-------------+-------------+-------------+---------------+-------------|
 
-### *Why Are the Total MSEs So Large?*
-The first thing we notice is that the total MSEs are all very large. The square roots of the MSEs, generally considered a measure of the average magnitude of errors, are around 60, far greater than the *Mean Bias* or the *SD Bias*. 
-To investigate this, we plot, in Figure 1, the density of the absolute values of the SGP (with and without SIMEX) errors with 1 and 2 prior year scores respectively from a single replication of the simulation study. Plots of other replications are highly similar. Figure 1 shows that, in any given replication of the simulation study, the absolute differences between estimated and true SGPs are highly skewed with a thin but long tail to the right. A small number of the errors in SGPs estimated with 1 prior are close to 100. Among SGPs estimated with 2 priors, it seems that there are less extreme outliers. SGPs estimated with SIMEX seem to mirror those without SIMEX closely, although the former tend to have more very large errors. The relatively small number of outliers can have dramatic influence on the MSE because, when squared, they become much larger and the skewness of the distributions of the squared errors will dramatically increase compared with those in Figure 1.
+### Proin eu ligula nisl
+In eget lorem felis. Aliquam leo lorem, blandit vel ultricies eu, varius nec nibh. Cras Purus tristique massa convallis convallis. Sed consectetur ultrices molestie. Sed risus eros, bibendum nec feugiat sed, condimentum nec orci. Proin orci augue, lobortis non mattis sit amet, porta in magna. Cras non eros risus, non fringilla elit. Proin sit amet dui metus, vitae rutrum est. Nullam viverra, sem id malesuada molestie, est erat tempus ipsum, a gravida arcu leo sit amet est. Aenean rutrum, ipsum eget suscipit sollicitudin, lacus felis convallis justo, ac aliquet eros arcu ut orci. 
 
-*Figure 1.*
+*Figure 1. From a File in the Local Directory*
 
-<img src="img/Fig_1_TMP.jpg" alt="Fig.1" style="width: 600px;"/>
+<img src="img/Fig_1.png" alt="Fig.1" style="width: 600px;"/>
 
-### *Comparing the SIMEX Results with the Non-SIMEX Results*
-Due to the skewness discussed in 1.3.1., the root mean square error is not a good measure of the magnitude of errors in this context. We compare the results of the SGP analysis with and without SIMEX based on two criteria—*SD Bias* and *MSE*. The comparison is straightforward: the SIMEX results have smaller biases but larger MSEs which indicates larger variability across replications. And it seems that in both scenarios (i.e. with 1 and 2 priors) the increase of variability outweighs the reduction of bias.
-There is, however, something strange here. In earlier studies of the SIMEX method for correcting biased model coefficients, we noticed much bigger bias reductions than those presented in Table 1. The SIMEX estimators do generally have larger variabilities, but usually this drawback is outweighed by the prominent gains in bias reduction. Why is the SIMEX method not doing well this time?
+### Donec sed lacus eget odio feugiat euismod
+In nibh dui, rutrum sit amet egestas eu, dapibus imperdiet lectus. Quisque urna augue, eleifend sit amet elementum vel, fringilla non libero. Aenean urna felis, ultrices vel vehicula egestas, dictum a turpis. Integer eleifend viverra massa, non varius leo pellentesque nec. Nullam sit amet justo sapien. Ut sit amet lorem ut mi hendrerit auctor. 
 
-### *Why Doesn’t the SIMEX Method Perform Well in Correcting Individual SGP?*
-At the end of the measurement error report presented at the TAC Meeting in July, 2012, we raised the question about the validity of using the SIMEX method to correct individual level SGPs. The rationale is as follows. 
-Suppose we estimated this model $\hat{y}_ {GOOD}=a+bx_ {OBSERVED}$ where $x_ {OBSERVED} $ is measured with errors, but what we really want to estimate is $\hat{y}_ {BETTER}=\alpha+\beta x_ {TRUE}$. Now the SIMEX method, or any other measurement error correction, moves us from a and b closer to α and β, and often times the goal is achieved at this stage. But in the SGP analysis, simply obtaining α and β is not enough. To get more accurate SGPs, we need to obtain $\hat{y}_ {BETTER}$, which is not obtainable unless we have $x_ {TRUE}$. 
-So, when estimating individual SGPs with SIMEX, what we estimated is roughly $\alpha+\beta x_ {TRUE}$, which is neither $\hat{y}_ {GOOD}$ nor $\hat{y}_ {BETTER}$. We were able to achieve some bias reduction, because the observed scores are usually not far from the true scores, but the effect is much discounted.
-To test this theory, we plugged the "true" scores into the SIMEX process. Table 2 presents the outcomes of SGP without SIMEX and with SIMEX combined with "true" scores from 100 simulation replications.
+# Results <a id="Results"></a>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat, dui sit amet placerat tincidunt, nibh ligula faucibus elit, nec adipiscing sapien lacus ullamcorper risus. Vivamus vitae tortor id lectus hendrerit aliquet. Nulla sit amet arcu ac velit consequat vulputate et non magna. Mauris quis metus sapien. Ut elit erat, semper vitae pharetra eleifend, ornare a augue. Suspendisse sed sapien nunc. Praesent dolor tellus, euismod bibendum eleifend eu, faucibus sed metus. Sed sed elit quis nibh accumsan congue nec vel ligula.
 
+{% comment %}<!--  Markdown Version of Table 2
 |----------------------+-------------+-------------+-------------+-------------+---------------+-------------|
-|**Table 2.**          |             |             |             |             |             | SGP With SIMEX|
-|                      |             | SGP Without SIMEX |       |             |           | and "True" Score|
+|**Table 2.**          |             |             |             |             |             | Varius Nec Nibh|
+|                      |             | Aliquam Leo Lorem |       |             |           | Vel Ultricies Eu|
 |:---------------------|------------:|------------:|------------:|------------:|--------------:|------------:|
 |                      |...............|............................|...............|      |       |         |
-|                      | Total MSE   |  Mean Bias  |   SD Bias   |  Total MSE  |   Mean Bias   |   SD Bias   |
-| Grade 4 ~ Grade 3    |   362.980   |    0.019    |     8.004   |   248.836   |     -0.428    |     5.652   |
-| Grade 5 ~ Grade 4, 3 |   360.795   |   -0.001    |     7.512   |   287.078   |     -0.057    |     6.225   |
+|                      | Nec Nibh   |  Ultricies  |   Cras Purus   |  Nec Nibh  |   Ultricies   |   Cras Purus   |
+| Pellentesque    |   362.980   |    0.019    |     8.004   |   248.836   |     -0.428    |     5.652   |
+| Pellentesque Nec |   360.795   |   -0.001    |     7.512   |   287.078   |     -0.057    |     6.225   |
 |----------------------+-------------+-------------+-------------+-------------+---------------+-------------|
+-->{% endcomment %}
 
-In Table 2, the SIMEX method greatly reduces both bias and MSE when used in combination with true scores. This shows that the fundamental reason for increased MSE in Table 1 is the use of SIMEX in combination with observed scores.
+**Table 2.  A Table Produced Using HTML Code Directly within the Document**
+<div>
+<table class='gmisc_table' style='border-collapse: collapse;'>
+	<a name='Table 2.'></a>
+	<thead>
+	<tr>
+		<th style='font-weight: 900; border-top: 4px double grey;'></th>
+		<th align='center' colspan='3' style='font-weight: 900; border-bottom: 1px solid grey; border-top: 4px double grey;'>Aliquam Leo Lorem</th><th style='border-top: 4px double grey;'>&nbsp;</th>
+		<th align='center' colspan='3' style='font-weight: 900; border-bottom: 1px solid grey; border-top: 4px double grey;'>Varius Nec Nibh Vel Ultricies Eu</th>
+	</tr>
+	<tr>
+		<th style=';'>&nbsp;</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Nec Nibh</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Ultricies</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Cras Purus</th>
+		<th style='border-bottom: 1px solid grey;'>&nbsp;</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Nec Nibh</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Ultricies</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Cras Purus</th>
+	</tr>
+	</thead><tbody>
+	<tr><td align='left' style='border-bottom: 1px solid grey; font-weight: 900;'>Analysis</td></tr>
+	<tr>
+		<td align='right' style=';'>Pellentesque</td>
+		<td align='right' style=';'>362.98</td>
+		<td align='right' style=';'> 0.02</td>
+		<td align='right' style=';'> 8.00</td>
+		<th style=';'>&nbsp;</th>
+		<td align='right' style=';'>287.78</td>
+		<td align='right' style=';'>-0.428</td>
+		<td align='right' style=';'> 5.65</td>
+	</tr>
+	<tr>
+		<td align='right' style='border-bottom: 1px solid grey;'>&nbsp;&nbsp;Pellentesque Nec</td>
+		<td align='right' style='border-bottom: 1px solid grey;'>360.80</td>
+		<td align='right' style='border-bottom: 1px solid grey;'>-0.00</td>
+		<td align='right' style='border-bottom: 1px solid grey;'> 7.51</td>
+		<th style='border-bottom: 1px solid grey;'>&nbsp;</th>
+		<td align='right' style='border-bottom: 1px solid grey;'>379.28</td>
+		<td align='right' style='border-bottom: 1px solid grey;'>-0.57</td>
+		<td align='right' style='border-bottom: 1px solid grey;'> 6.23</td>
+	</tr>
+	</tbody>
+</table>
+</div>
 
-### *Can We Use Estimated True Scores?*
-Results in Table 2 are obviously not obtainable in reality. As per some TAC members’ suggestion, we tried plugging in the estimated true scores:
-$ X_ {\text{Est. True}}= \text{Reliability} \times (X_ {OBSERVED}-\bar{X}_ {OBSERVED})+\bar{X}_ {OBSERVED}$
-The results we obtained are almost exactly the same as those in Table 1, which suggests that the inaccessibility of the true scores is a problem that is insurmountable.
+In consectetur metus et eros auctor a vehicula erat sollicitudin. Ut venenatis aliquet ante vitae ultricies. Nunc vitae arcu dui. Nullam ut libero laoreet felis accumsan posuere. Suspendisse ac nisi enim. Suspendisse vel eros vel urna blandit tempus a in ligula. Nam at ante purus, ut consectetur lorem. Pellentesque laoreet euismod libero, et rutrum neque pulvinar sit amet. Quisque imperdiet scelerisque nulla, eget feugiat justo imperdiet quis. In porta commodo placerat. Curabitur quis ante dapibus enim euismod fermentum. 
 
-### *Conclusion*
-Our conclusion is that the SIMEX method should not be used to correct individual SGPs. Indeed, we do not believe that any measure error correction method should be used to estimate individual outcomes or make predictions. 
+# More Tables and Figures <a id="More Tables and Figures"></a>
 
-# The Effect of the SIMEX Method on MGPs at the Class or School Level <a id="SIMEX Method and Aggregate SGPs"></a>
-Although we concluded that the SIMEX method should not be used to estimate individual SGPs, we do believe that the SIMEX method can be useful to correct MGPs. This is because, collectively, the mean/median prior scores of a class/school should be close enough to the true mean/median prior scores that we can consider the problem in 1.3.3 at least partially solved.
-To test the hypothesis that the differences between aggregated observed scores and the aggregated true scores are much smaller than the errors of the individual observed scores, we examined two scenarios—randomly assigned classes/schools and actual classes/schools which may involve sorting.
-
-## Errors of Aggregated Scale Scores in Randomly Assigned Classes/Schools <a id="SIMEX Method and Aggregate SGPs +  + Randomly Assigned Students"></a>
-The nice thing about studying randomly assigned classes/schools, although this scenario may not be completely realistic, is that it allows us to isolate the influence of class/school size on errors. 
-In the simulation described in 1.1, we randomly sampled without replacement students into classes of various sizes. We calculated the difference between class mean observed scores and class mean true scores, the difference between class median observed and true scores, and the difference between individual observed and true scores. Figure 2 plots the errors at different levels for Grade 3 scores with class sizes of 10, 20, and 50. The data are drawn from a single replication of the simulation study. Plots of other grades and other replications look highly similar.
+## Images can also be read in from a URL <a id="More Tables and Figures + Images from the Web"></a>
 
 *Figure 2.*
 
-<img src="img/Fig_2_TMP.jpg" alt="Fig.2" style="width: 600px;"/>
+<img src="http://www.placekitten.com/400/400" alt="Fig.2"/>
 
-Figure 2 shows that, when observed scores are aggregated, even in classes of just 10 students, the magnitudes of errors are greatly reduced. The error reduction improves considerably as class/school sizes go up.
+## More HTML Tables <a id="More Tables and Figures + More HTML Tables"></a>
+HTML Provides the most flexible table presentation I've found.  Here is another example
 
-## Errors of Aggregated Scale Scores in Actual Classes/Schools <a id="SIMEX Method and Aggregate SGPs + Actual Student Assignment"></a>
-We used sgpData_LONG contained in the SGP R package as our “true” data, and perturbed this dataset in the same way as we described in 1.1. This dataset contains school numbers. We calculated the errors of the school mean, school median, and individual scale scores. Figure 3 plots the errors of the Math and Reading scores obtained in one of the simulation replications in the third grade in 2012-13, which include 4,792 students in 72 schools. The error density plots of other subject matter, other grades and years, and other simulation replications look highly similar.
+**Table 3. Another Table Produced Using HTML Directly** 
+<div>
+<table class='gmisc_table' style='border-collapse: collapse;'>
+	<a name='Table 3.'></a>
+	<thead>
+	<tr>
+		<th style='font-weight: 900; border-top: 4px double grey;'></th>
+		<th align='center' colspan='3' style='font-weight: 900; border-bottom: 1px solid grey; border-top: 4px double grey;'>Man Amet egestas</th><th style='border-top: 4px double grey;'>&nbsp;</th>
+		<th align='center' colspan='3' style='font-weight: 900; border-bottom: 1px solid grey; border-top: 4px double grey;'>Median Amet egestas</th>
+	</tr>
+	<tr>
+		<th style=';'>&nbsp;</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Nec Nibh</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Ultricies</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Cras Purus</th>
+		<th style='border-bottom: 1px solid grey;'>&nbsp;</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Nec Nibh</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Ultricies</th>
+		<th align='center' style='border-bottom: 1px solid grey;'>Cras Purus</th>
+	</tr>
+	</thead><tbody>
+	<tr><td align='left' style='border-bottom: 1px solid grey; font-weight: 900;'>Pellentesque</td></tr>
+	<tr>
+		<td align='right' style=';'>Without Dictumst </td>
+		<td align='right' style=';'>5.57</td>
+		<td align='right' style=';'> -0.20</td>
+		<td align='right' style=';'> 2.36</td>
+		<th style=';'>&nbsp;</th>
+		<td align='right' style=';'>26.37</td>
+		<td align='right' style=';'>-0.10</td>
+		<td align='right' style=';'> 5.14</td>
+	</tr>
+	<tr>
+		<td align='right' style=';'>With Dictumst </td>
+		<td align='right' style=';'>4.74</td>
+		<td align='right' style=';'>-0.08</td>
+		<td align='right' style=';'> 2.18</td>
+		<th style=';'>&nbsp;</th>
+		<td align='right' style=';'>28.36</td>
+		<td align='right' style=';'> 0.03</td>
+		<td align='right' style=';'> 5.33</td>
+	</tr>
+	<tr><td align='left' style='border-bottom: 1px solid grey; font-weight: 900;'>Pellentesque Nec</td></tr>
+	<tr>
+		<td align='right' style=';'>Without Dictumst </td>
+		<td align='right' style=';'>5.95</td>
+		<td align='right' style=';'>-0.26</td>
+		<td align='right' style=';'> 2.43</td>
+		<th style=';'>&nbsp;</th>
+		<td align='right' style=';'>27.10</td>
+		<td align='right' style=';'>-0.27</td>
+		<td align='right' style=';'> 5.20</td>
+	</tr>
+	<tr>
+		<td align='right' style=';'>With Dictumst </td> 
+		<td align='right' style=';'>4.52</td>
+		<td align='right' style=';'> 0.09</td>
+		<td align='right' style=';'> 2.13</td>
+		<th style=';'>&nbsp;</th>
+		<td align='right' style=';'>25.68</td>
+		<td align='right' style=';'> 0.08</td>
+		<td align='right' style=';'> 5.06</td>
+	</tr>
+	</tbody>
+</table>
+</div>
 
-*Figure 3.*
-
-<img src="img/Fig_3_TMP.jpg" alt="Fig.3" style="width: 600px;"/>
-
-Figure 3 shows that in actual schools which may involve student sorting, aggregated observed and true scores are again much closer to each other compared with individual observed and true scores. This confirms our theoretical basis for using SIMEX to correct aggregated SGPs.
-
-## Using the SIMEX Method to Correct Median/Mean SGPs <a id="SIMEX Method and Aggregate SGPs + SIMEX Corrected Aggregate SGPs"></a>
-There are two possible ways to implement SIMEX on aggregated SGPs. The first way is to estimate individual SIMEX SGPs and then aggregate them at the class/school level. The second way is to apply the simulation-extrapolation process directly to MGPs—perturb the data to obtain more and more biased MGPs and then extrapolate the trend back to no errors. We examine each of them.
-
-###  *SIMEX, then Aggregate*
-We set up the simulation study similarly as that described in 1.1, except that this simulation is based on a different data set—sgpData_LONG, which contains school numbers. We calculated the total MSE, the Mean Bias, and the SD Bias, defined similarly as in equations (1), (2), and (3). The total MSE is the squared difference between estimated and “true” MGPs averaged across schools and replications; the Mean Bias is the difference between estimated and “true” MGPs averaged across schools and replications; and the SD Bias is the standard deviation across schools of the difference between estimated and “true” MGPs averaged across 100 replications. Results from the Reading test in Grades 4 and 5 conditioning on 1 and 2 priors respectively are presented in Table 3.
-
+{% comment %}<!--  Markdown Version of Table 3
 |----------------------+-------------+-------------+-------------+-------------+-------------+-------------|
 |**Table 3.**          |             |             |             |             |             |             |
-|                      |         | Mean School SGP |             |             |       | Median School SGP |
+|                      |         | Mean Amet egestas |             |             |       | Median Amet egestas |
 |:---------------------|------------:|------------:|:------------|------------:|------------:|------------:|
 |                      |...............|.......................|...............|       |     |             |
-|                      | Total MSE   |  Mean Bias  |   SD Bias   |  Total MSE  |  Mean Bias  |   SD Bias   |
+|                      | Nec Nibh   |  Ultricies  |   Cras Purus   |  Nec Nibh  |  Ultricies  |   Cras Purus   |
 |                      |             |             |             |             |             |             |
-| Grade 4 ~ Grade 3
-| Without SIMEX        |    5.574    |    -0.196   |    2.360    |   26.366    |   -0.104    |    5.137    |
-| With SIMEX           |    4.741    |    -0.075   |    2.177    |   28.364    |    0.034    |    5.329    |
+| Pellentesque
+| Without Dictumst        |    5.574    |    -0.196   |    2.360    |   26.366    |   -0.104    |    5.137    |
+| With Dictumst           |    4.741    |    -0.075   |    2.177    |   28.364    |    0.034    |    5.329    |
 |===
 |                      |             |             |             |             |             |             |
-| Grade 5 ~ Grade 4, 3
-| Without SIMEX        |    5.948    |    -0.263    |   2.433    |   27.101    |   -0.266    |    5.199    |
-| With SIMEX           |    4.519    |     0.094    |   2.125    |   25.679    |    0.084    |    5.060    |
+| Pellentesque Nec
+| Without Dictumst        |    5.948    |    -0.263    |   2.433    |   27.101    |   -0.266    |    5.199    |
+| With Dictumst           |    4.519    |     0.094    |   2.125    |   25.679    |    0.084    |    5.060    |
 |----------------------+-------------+-------------+-------------+-------------+---------------+-----------|
+-->{% endcomment %}
 
+## Tables in LaTeX <a id="More Tables and Figures + Tables in LaTeX"></a>
 
+Tables can also be produced using the "array" environment.  LaTeX math code can be interpreted using Math Jax, and array is a math mode analog to the tabular environment.  Most of the functionality of the tabular is available in array.  However, not everything is available.  For example, Table 3 would require the use of '\multicolumn' to do the job of HTML codes 'colspan'.  
 
+Like [display LaTeX math functions](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations), the array is enclosed in double dollar sign, `$$`, enclosures in the markdown text. Here is an example of a simple LaTeX array used in markdown.
 
+**Table 4.  Disply Math Function (Centered, but puts equation number in)**
 
+$$
+\begin{array}{lcr}
+\textbf{What} & \textbf{Variable} & \textbf{Integer}\\
+\mbox{First number} & x & 8\\
+\mbox{Second number} & y & 15\\
+\mbox{Sum} & x + y & 23\\
+\mbox{Difference} & x - y & -7\\
+\mbox{Product} & xy & 120 \end{array}
+$$
 
+[Inline LaTeX math](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations) can also be used.  Here the array is enclosed in single dollar sign, `$` in the markdown text.
 
+**Table 5.  Inline Math Function (Alligned Left)**
 
+$\begin{array}{lcr} \textbf{What} & \textbf{Variable} & \textbf{Integer}\\\mbox{First number} & x & 8\\\mbox{Second number} & y & 15\\\mbox{Sum} & x+y & 23\\\mbox{Difference} & x-y & -7\\\mbox{Product} & xy & 120\end{array}$
 
+# References  <a id="References"></a>
 
+<div id="citation" markdown="1">
+Doe, J. (2010). *First Book*. Cambridge: Cambridge University Press.
+
+Doe, J. (2012). Article. *Journal of Generic Studies*, *6*, 33–34.
+
+Doe, J., Smith, S., & Roe, J. (2007). Why Water Is Wet:  A study in the science of the obvious and collection of simulation studies meant to create a really long citation entry for this example. In S. Smith (Ed.), *Third Book*. Oxford: Oxford University Press.
+	
+</div>
