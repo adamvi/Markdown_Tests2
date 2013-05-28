@@ -1,3 +1,5 @@
+/* document */
+
 #document {
   counter-reset: figure 0 section 0;
 }
@@ -121,11 +123,12 @@
 }
 #document h3 {
   font-size: 16px;
+  font-style: italic;
 }
 #document .content-node.text .content {
   padding: 10px 0;
 }
-.content-node.section > p, ul,ol {
+.content-node.section > p, ol {
   margin: 0 100px;
 }
 
@@ -214,8 +217,20 @@ h2 {
 hr{
 	display:none
 }
-/* Button
--------------------------------------------------------------------------------*/
+
+
+/* Citations & References http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/ http://www.thesitewizard.com/css/hanging-indents.shtml */
+#citation p {
+  margin: 0 100px;
+  text-align:justify;
+  min-height: 22px;
+  padding-bottom: 15px;
+  padding-left: 35px ;
+  text-indent: -35px ;
+}
+
+
+/* Button */
 a.button {
   border: none;
   display: block;

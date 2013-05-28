@@ -421,9 +421,10 @@ code,
 }
 
 
-.content-node.section > p, ul,ol {
+.content-node.section > p, ul, ol {
   margin: 0 100px;
 }
+
 .content-node.document .document-title {
   font-size: 60px;
   line-height: 70px;
@@ -435,6 +436,5 @@ code,
 .content-node.document #document_lead {
   font-size: 20px;
   line-height: 1.5;
-  text-align:center;
 }
 
